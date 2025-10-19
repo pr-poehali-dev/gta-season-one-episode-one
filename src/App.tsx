@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Episode from "./pages/Episode";
 import ComicViewer from "./pages/ComicViewer";
 import ComicViewer2 from "./pages/ComicViewer2";
+import ComicViewer3 from "./pages/ComicViewer3";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/episode" element={<Episode />} />
           <Route path="/comic" element={<ComicViewer />} />
           <Route path="/comic/2" element={<ComicViewer2 />} />
+          <Route path="/comic/3" element={<ComicViewer3 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

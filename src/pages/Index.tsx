@@ -22,6 +22,15 @@ const episodes = [
     image: 'https://cdn.poehali.dev/projects/b3560631-c2f1-45b8-9409-6de5940bd86c/files/441c0744-acab-49d5-b3df-e2fa75eb672f.jpg',
     hasComic: true,
     comicUrl: '/comic/2'
+  },
+  {
+    id: 3,
+    title: 'Новая жизнь',
+    duration: '26 мин',
+    description: 'Задание Джерри переворачивает жизнь Виктора. Его увольняют с базы, и теперь он — обычный гражданин.',
+    image: 'https://cdn.poehali.dev/projects/b3560631-c2f1-45b8-9409-6de5940bd86c/files/9ddc439d-cf24-445e-8f37-8c180a25223b.jpg',
+    hasComic: true,
+    comicUrl: '/comic/3'
   }
 ];
 
