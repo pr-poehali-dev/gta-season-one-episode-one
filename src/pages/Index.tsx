@@ -10,7 +10,8 @@ const episodes = [
     title: 'Первые шаги в тёмный мир',
     duration: '22 мин',
     description: 'Виктор Вэнс прибывает на авиабазу Форт-Бакстер. Сержант Мартинес предлагает ему первое опасное задание.',
-    image: 'https://cdn.poehali.dev/projects/b3560631-c2f1-45b8-9409-6de5940bd86c/files/86dbc5ae-8f9b-4a70-917a-3dc688695b1f.jpg'
+    image: 'https://cdn.poehali.dev/projects/b3560631-c2f1-45b8-9409-6de5940bd86c/files/86dbc5ae-8f9b-4a70-917a-3dc688695b1f.jpg',
+    hasComic: true
   }
 ];
 
@@ -81,8 +82,7 @@ export default function Index() {
               {episodes.map((episode) => (
                 <Card 
                   key={episode.id} 
-                  onClick={() => navigate(`/episode?id=${episode.id}`)}
-                  className="overflow-hidden bg-card border-2 border-border hover-scale cursor-pointer group"
+                  className="overflow-hidden bg-card border-2 border-border group"
                 >
                   <div className="relative h-64 overflow-hidden">
                     <img 
@@ -93,9 +93,6 @@ export default function Index() {
                     <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
                       Эпизод {episode.id}
                     </Badge>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                      <Icon name="Play" size={48} className="opacity-0 group-hover:opacity-100 transition-opacity text-white" />
-                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-bold mb-2">{episode.title}</h3>
@@ -103,7 +100,26 @@ export default function Index() {
                       <Icon name="Clock" size={16} />
                       <span>{episode.duration}</span>
                     </div>
-                    <p className="text-muted-foreground">{episode.description}</p>
+                    <p className="text-muted-foreground mb-4">{episode.description}</p>
+                    
+                    <div className="flex gap-2">
+                      {episode.hasComic && (
+                        <button
+                          onClick={() => navigate('/comic')}
+                          className="flex-1 bg-primary text-primary-foreground px-4 py-2 font-bold hover-scale flex items-center justify-center gap-2"
+                        >
+                          <Icon name="BookOpen" size={18} />
+                          Читать комикс
+                        </button>
+                      )}
+                      <button
+                        onClick={() => navigate(`/episode?id=${episode.id}`)}
+                        className="flex-1 bg-secondary text-secondary-foreground px-4 py-2 font-bold hover-scale flex items-center justify-center gap-2"
+                      >
+                        <Icon name="Play" size={18} />
+                        Смотреть
+                      </button>
+                    </div>
                   </div>
                 </Card>
               ))}
