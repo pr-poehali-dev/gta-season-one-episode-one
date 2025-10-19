@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import Episode from "./pages/Episode";
 import ComicViewer from "./pages/ComicViewer";
+import ComicViewer2 from "./pages/ComicViewer2";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/episode" element={<Episode />} />
           <Route path="/comic" element={<ComicViewer />} />
+          <Route path="/comic/2" element={<ComicViewer2 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

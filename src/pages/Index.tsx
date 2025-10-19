@@ -11,7 +11,17 @@ const episodes = [
     duration: '22 мин',
     description: 'Виктор Вэнс прибывает на авиабазу Форт-Бакстер. Сержант Мартинес предлагает ему первое опасное задание.',
     image: 'https://cdn.poehali.dev/projects/b3560631-c2f1-45b8-9409-6de5940bd86c/files/86dbc5ae-8f9b-4a70-917a-3dc688695b1f.jpg',
-    hasComic: true
+    hasComic: true,
+    comicUrl: '/comic'
+  },
+  {
+    id: 2,
+    title: 'Сложные решения',
+    duration: '24 мин',
+    description: 'Виктор получает новое задание от Джерри Мартинеса — забрать деньги у Фила Кэссиди. Всё идёт не по плану.',
+    image: 'https://cdn.poehali.dev/projects/b3560631-c2f1-45b8-9409-6de5940bd86c/files/441c0744-acab-49d5-b3df-e2fa75eb672f.jpg',
+    hasComic: true,
+    comicUrl: '/comic/2'
   }
 ];
 
@@ -105,7 +115,7 @@ export default function Index() {
                     <div className="flex gap-2">
                       {episode.hasComic && (
                         <button
-                          onClick={() => navigate('/comic')}
+                          onClick={() => navigate(episode.comicUrl || '/comic')}
                           className="flex-1 bg-primary text-primary-foreground px-4 py-2 font-bold hover-scale flex items-center justify-center gap-2"
                         >
                           <Icon name="BookOpen" size={18} />
