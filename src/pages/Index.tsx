@@ -39,6 +39,13 @@ const characters = [
     role: 'Антагонист',
     description: 'Коррумпированный военный сержант. Втягивает Виктора в опасные дела с наркотиками.',
     image: 'https://cdn.poehali.dev/projects/b3560631-c2f1-45b8-9409-6de5940bd86c/files/e4c944fc-2c50-416a-82e2-7fe45a34504d.jpg'
+  },
+  {
+    id: 3,
+    name: 'Фил Кэссиди',
+    role: 'Торговец оружием',
+    description: 'Ветеран войны с бородой, опытный торговец оружием. Грубый и циничный, но надёжный партнёр в опасных делах.',
+    image: 'https://cdn.poehali.dev/projects/b3560631-c2f1-45b8-9409-6de5940bd86c/files/bf98bcd0-c54f-49f0-a410-17e7873ce051.jpg'
   }
 ];
 
