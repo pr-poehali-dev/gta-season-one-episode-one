@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
@@ -32,6 +33,7 @@ const characters = [
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState<'episodes' | 'characters'>('episodes');
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background">
@@ -79,6 +81,7 @@ export default function Index() {
               {episodes.map((episode) => (
                 <Card 
                   key={episode.id} 
+                  onClick={() => navigate(`/episode?id=${episode.id}`)}
                   className="overflow-hidden bg-card border-2 border-border hover-scale cursor-pointer group"
                 >
                   <div className="relative h-64 overflow-hidden">
@@ -90,6 +93,9 @@ export default function Index() {
                     <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
                       Эпизод {episode.id}
                     </Badge>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                      <Icon name="Play" size={48} className="opacity-0 group-hover:opacity-100 transition-opacity text-white" />
+                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-bold mb-2">{episode.title}</h3>
